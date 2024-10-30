@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <ol>
+            {% for student in st_list %}
+              <li>{{ student }}</li>
+            {% endfor %}
+          </ol>
+          <ul>
+            {% for key, val in subjects({{ key }} - {{ val }}) %}
+              <li>{{ key }} - {{ val }}</li>
+            {% endfor %}
+          </ul>
+    </body>
+    
+</html>
