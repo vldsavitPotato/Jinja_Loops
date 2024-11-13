@@ -5,16 +5,30 @@
         <title>{{ title }}</title>
     </head>
     <body>
+      <ol>
+        {% for student, grades in st_list %}
+          <li>
+            {{ student }}
+            <ul>
+              {% for key, val in grades.items() %}
+                <li>{{ key }} - {{ val }}</li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endfor %}
         <ol>
-            {% for student in st_list %}
-              <li>{{ student }}</li>
-            {% endfor %}
-          </ol>
+          {% for student, grades in st_list %}
           <ul>
-            {% for key, val in subjects({{ key }} - {{ val }}) %}
-              <li>{{ key }} - {{ val }}</li>
+            {% for key, val in grades.items() %}
+              <li>
+                {{ loop.index }}
+                 {{ key }} - {{ val }}
+              </li>
+            {% else %}
+              <li>No grades</li>
             {% endfor %}
           </ul>
+          {% endfor %}
     </body>
     
 </html>
