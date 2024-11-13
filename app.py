@@ -24,6 +24,8 @@ movies = [({'The Godfather': 1}),
           ({'One Flew Over the Cuckoos Nest': 9}),
           ({'Lawrence of Arabia': 10})]
 
+# movies = []
+
 @app.route("/")
 def index():
   return render_template('index.html',
@@ -38,6 +40,6 @@ def students():
                         subjects = subjects)
 
 @app.route("/workshop")
-def students():
-  return render_template('students.html',
+def workshop():
+  return render_template('workshop.html',
                         movies = movies)
